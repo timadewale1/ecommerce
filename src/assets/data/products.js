@@ -34,6 +34,7 @@ const products = [
     productName: "Stone and Beam Westview ",
     imgUrl: productImg01,
     category: "sofa",
+    subCategory: "trending", // Subcategory
     price: 193,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -53,6 +54,7 @@ const products = [
     productName: "Rivet Bigelow Modern ",
     imgUrl: productImg02,
     category: "sofa",
+    subCategory: "trending", // Subcategory
     price: 253,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -76,6 +78,8 @@ const products = [
     productName: "Amazon Brand Modern Sofa",
     imgUrl: productImg03,
     category: "sofa",
+    subCategory: "popular", // Subcategory
+
     price: 173,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -98,6 +102,8 @@ const products = [
     productName: "Rivet Bigelow Modern ",
     imgUrl: productImg02,
     category: "sofa",
+    subCategory: "popular", // Subcategory
+
     price: 253,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -121,6 +127,8 @@ const products = [
     imgUrl: productImg04,
     category: "sofa",
     price: 163,
+    subCategory: "popular", // Subcategory
+
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -144,6 +152,7 @@ const products = [
     imgUrl: productImg05,
     category: "sofa",
     price: 163,
+    subCategory: "popular", // Subcategory
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -167,6 +176,8 @@ const products = [
     imgUrl: productImg06,
     category: "sofa",
     price: 163,
+    subCategory: "popular", // Subcategory
+
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -189,6 +200,8 @@ const products = [
     imgUrl: productImg07,
     category: "chair",
     price: 99,
+    subCategory: "popular", // Subcategory
+
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -212,6 +225,8 @@ const products = [
     imgUrl: productImg007,
     category: "sofa",
     price: 173,
+    subCategory: "bestsales", // Subcategory
+
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -234,6 +249,8 @@ const products = [
     productName: "Baltsar Chair",
     imgUrl: productImg08,
     category: "chair",
+    subCategory: "bestsales", // Subcategory
+
     price: 89,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -258,6 +275,8 @@ const products = [
     imgUrl: productImg09,
     category: "chair",
     price: 112,
+    subCategory: "bestsales", // Subcategory
+
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -281,6 +300,8 @@ const products = [
     imgUrl: productImg13,
     category: "mobile",
     price: 799,
+    subCategory: "bestsales", // Subcategory
+
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -302,6 +323,8 @@ const products = [
     productName: "Sakarias Armchair",
     imgUrl: productImg10,
     category: "chair",
+    subCategory: "bestsales", // Subcategory
+
     price: 99,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -325,6 +348,8 @@ const products = [
     imgUrl: productImg14,
     category: "mobile",
     price: 799,
+    subCategory: "bestsales", // Subcategory
+
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -346,6 +371,7 @@ const products = [
     id: "12",
     productName: "Realme 8",
     imgUrl: productImg15,
+    subCategory: "bestsales", // Subcategory
     category: "mobile",
     price: 599,
     shortDesc:
@@ -370,6 +396,8 @@ const products = [
     productName: "One Plus Nord",
     imgUrl: productImg16,
     category: "mobile",
+    subCategory: "trending", // Subcategory
+
     price: 799,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -393,6 +421,8 @@ const products = [
     productName: "Apple iPhone 13 Pro",
     imgUrl: productImg17,
     category: "mobile",
+    subCategory: "trending", // Subcategory
+
     price: 899,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -416,6 +446,8 @@ const products = [
     productName: "Samsung Galaxy S22",
     imgUrl: productImg18,
     category: "mobile",
+    subCategory: "trending", // Subcategory
+
     price: 699,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -438,6 +470,8 @@ const products = [
     id: "16",
     productName: "Rolex Watch",
     imgUrl: productImg19,
+    subCategory: "trending", // Subcategory
+
     category: "watch",
     price: 299,
     shortDesc:
@@ -462,6 +496,8 @@ const products = [
     productName: "Timex Easy Reader Watch",
     imgUrl: productImg20,
     category: "watch",
+    subCategory: "trending", // Subcategory
+
     price: 299,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -486,6 +522,8 @@ const products = [
     imgUrl: productImg21,
     category: "watch",
     price: 299,
+    subCategory: "trending", // Subcategory
+
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -509,6 +547,8 @@ const products = [
     imgUrl: productImg22,
     category: "watch",
     price: 399,
+    subCategory: "popular", // Subcategory
+
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
     description:
@@ -531,6 +571,8 @@ const products = [
     productName: "Beat Studio Wireless",
     imgUrl: productImg23,
     category: "wireless",
+    subCategory: "popular", // Subcategory
+
     price: 199,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -554,6 +596,7 @@ const products = [
     productName: "Beat EP Headphones",
     imgUrl: productImg25,
     category: "wireless",
+    subCategory: "popular", // Subcategory
     price: 199,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
