@@ -28,7 +28,7 @@ const Login = () => {
       console.log(user);
       setLoading(false);
       toast.success("succesfully logged in");
-      const redirectTo = location.state?.from || "/checkout";
+      const redirectTo = location.state?.from || "/home";
       navigate(redirectTo, { replace: true }); // Use replace to replace the current entry in the history
     } catch (error) {
       setLoading(false);
