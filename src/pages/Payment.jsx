@@ -8,6 +8,8 @@ import { db } from "../firebase.config"; // Import db and storage from firebase.
 import { collection, addDoc } from "firebase/firestore";
 import { cartActions } from "../redux/slices/cartSlice";
 import { useDispatch } from "react-redux";
+import Helmet from "../components/Helmet/Helmet";
+import CommonSection from "../components/UI/CommonSection";
 
 const PaymentPage = () => {
   const [paymentMethod, setPaymentMethod] = useState(null);
@@ -71,27 +73,30 @@ const PaymentPage = () => {
   };
 
   return (
-    <div>
-      <h1>Payment Page</h1>
-      <motion.button
-        whileTap={{ scale: 1.2 }}
-        className="buy__btn auth__btn"
-        onClick={handlePayNow}
-      >
-        Pay Now
-      </motion.button>
-      <motion.button
-        whileTap={{ scale: 1.2 }}
-        className="buy__btn auth__btn"
-        onClick={handlePayOnDelivery}
-      >
-        Pay on Delivery
-      </motion.button>
+    <Helmet title="payment page">
+      <CommonSection title="Payment Page" />
+      <div>
+        <h1>Payment Page</h1>
+        <motion.button
+          whileTap={{ scale: 1.2 }}
+          className="buy__btn auth__btn"
+          onClick={handlePayNow}
+        >
+          Pay Now
+        </motion.button>
+        <motion.button
+          whileTap={{ scale: 1.2 }}
+          className="buy__btn auth__btn"
+          onClick={handlePayOnDelivery}
+        >
+          Pay on Delivery
+        </motion.button>
 
-      {paymentMethod === "payNow" && !isPaymentFormSubmitted && (
-        <PaymentForm onSubmit={handlePaymentFormSubmit} />
-      )}
-    </div>
+        {paymentMethod === "payNow" && !isPaymentFormSubmitted && (
+          <PaymentForm onSubmit={handlePaymentFormSubmit} />
+        )}
+      </div>
+    </Helmet>
   );
 };
 

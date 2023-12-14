@@ -1,5 +1,7 @@
 // PaymentForm.jsx
 import React, { useState } from "react";
+import CommonSection from "../components/UI/CommonSection";
+import Helmet from "../components/Helmet/Helmet";
 
 const PaymentForm = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -15,37 +17,40 @@ const PaymentForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Payment Form</h2>
-      <label>
-        Card Number:
-        <input
-          type="text"
-          value={cardNumber}
-          onChange={(e) => setCardNumber(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Expiry Date:
-        <input
-          type="text"
-          value={expiryDate}
-          onChange={(e) => setExpiryDate(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        CVV:
-        <input
-          type="text"
-          value={cvv}
-          onChange={(e) => setCvv(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Submit Payment</button>
-    </form>
+    <Helmet title="Payment Form">
+      <CommonSection title="Payment Form" />
+      <form onSubmit={handleSubmit}>
+        <h2>Payment Form</h2>
+        <label>
+          Card Number:
+          <input
+            type="text"
+            value={cardNumber}
+            onChange={(e) => setCardNumber(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Expiry Date:
+          <input
+            type="text"
+            value={expiryDate}
+            onChange={(e) => setExpiryDate(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          CVV:
+          <input
+            type="text"
+            value={cvv}
+            onChange={(e) => setCvv(e.target.value)}
+            required
+          />
+        </label>
+        <button type="submit">Submit Payment</button>
+      </form>
+    </Helmet>
   );
 };
 
