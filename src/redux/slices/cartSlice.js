@@ -78,22 +78,25 @@ const cartSlice = createSlice({
     },
     updateQuantity: (state, action) => {
       const { userId, itemId, quantity } = action.payload;
-      const cartItem = state.userCarts[userId].find(
-        (item) => item.id === itemId
-      );
+      const cartItems = state.userCarts[userId];
 
-      if (cartItem) {
-        cartItem.quantity = quantity;
-        cartItem.totalPrice = Number(cartItem.price) * Number(quantity);
+      // Ensure cartItems is defined before proceeding
+      if (cartItems) {
+        const cartItem = cartItems.find((item) => item.id === itemId);
 
-        // Update totalQuantity
-        state.totalQuantity = state.userCarts[userId].reduce(
-          (total, item) => total + item.quantity,
-          0
-        );
+        if (cartItem) {
+          cartItem.quantity = quantity;
+          cartItem.totalPrice = Number(cartItem.price) * Number(quantity);
 
-        // Update totalAmount for the specific user
-        state.totalAmount = calculateTotalAmount(state.userCarts[userId]);
+          // Update totalQuantity
+          state.totalQuantity = cartItems.reduce(
+            (total, item) => total + item.quantity,
+            0
+          );
+
+          // Update totalAmount for the specific user
+          state.totalAmount = calculateTotalAmount(cartItems);
+        }
       }
     },
   },
