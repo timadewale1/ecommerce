@@ -11,7 +11,6 @@ import { auth } from "../firebase.config";
 const Cart = () => {
   const user = auth.currentUser;
   const userId = user ? user.uid : null;
-  const dispatch = useDispatch();
 
   const cartItems = useSelector((state) =>
     userId ? state.cart.userCarts[userId] : []
@@ -24,25 +23,6 @@ const Cart = () => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
   }, []);
-  const handleAddQuantity = (item) => {
-    dispatch(
-      cartActions.updateQuantity({
-        itemId: item.id, // Use "itemId" instead of "productId"
-        quantity: item.quantity + 1,
-      })
-    );
-  };
-
-  const handleSubtractQuantity = (item) => {
-    if (item.quantity > 1) {
-      dispatch(
-        cartActions.updateQuantity({
-          itemId: item.id, // Use "itemId" instead of "productId"
-          quantity: item.quantity - 1,
-        })
-      );
-    }
-  };
 
   return (
     <Helmet title="cart">
@@ -61,18 +41,13 @@ const Cart = () => {
                       <th>Title</th>
                       <th>Prices</th>
                       <th>Qty</th>
-                      <th>Action</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
 
                   <tbody>
                     {cartItems.map((item, index) => (
-                      <Tr
-                        key={index}
-                        item={item}
-                        onAddQuantity={() => handleAddQuantity(item)}
-                        onSubtractQuantity={() => handleSubtractQuantity(item)}
-                      />
+                      <Tr item={item} key={index} />
                     ))}
                   </tbody>
                 </table>
@@ -105,12 +80,12 @@ const Cart = () => {
   );
 };
 
-const Tr = ({ item, onAddQuantity, onSubtractQuantity }) => {
-  // const dispatch = useDispatch();
+const Tr = ({ item }) => {
+  const dispatch = useDispatch();
 
-  // const deleteProduct = () => {
-  //   dispatch(cartActions.deleteItem(item.id));
-  // };
+  const deleteProduct = () => {
+    dispatch(cartActions.deleteItem(item.id));
+  };
 
   return (
     <tr>
@@ -123,13 +98,8 @@ const Tr = ({ item, onAddQuantity, onSubtractQuantity }) => {
       <td>
         <motion.i
           whileTap={{ scale: 1.2 }}
-          onClick={() => onAddQuantity(item.id)}
-          className="ri-add-circle-fill mr-2"
-        ></motion.i>
-        <motion.i
-          whileTap={{ scale: 1.2 }}
-          onClick={() => onSubtractQuantity(item.id)}
-          className="ri-subtract-fill"
+          onClick={deleteProduct}
+          className="ri-delete-bin-line"
         ></motion.i>
       </td>
     </tr>
