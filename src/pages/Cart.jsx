@@ -27,7 +27,7 @@ const Cart = () => {
   const handleAddQuantity = (item) => {
     dispatch(
       cartActions.updateQuantity({
-        productId: item.id,
+        itemId: item.id, // Use "itemId" instead of "productId"
         quantity: item.quantity + 1,
       })
     );
@@ -37,7 +37,7 @@ const Cart = () => {
     if (item.quantity > 1) {
       dispatch(
         cartActions.updateQuantity({
-          productId: item.id,
+          itemId: item.id, // Use "itemId" instead of "productId"
           quantity: item.quantity - 1,
         })
       );
@@ -123,12 +123,12 @@ const Tr = ({ item, onAddQuantity, onSubtractQuantity }) => {
       <td>
         <motion.i
           whileTap={{ scale: 1.2 }}
-          onClick={onAddQuantity}
+          onClick={() => onAddQuantity(item.id)}
           className="ri-add-circle-fill mr-2"
         ></motion.i>
         <motion.i
           whileTap={{ scale: 1.2 }}
-          onClick={onSubtractQuantity}
+          onClick={() => onSubtractQuantity(item.id)}
           className="ri-subtract-fill"
         ></motion.i>
       </td>
