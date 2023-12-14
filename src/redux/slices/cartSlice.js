@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   userCarts: {},
   totalQuantity: 0, // Add totalQuantity field
+  totalAmount: 0, // Add totalAmount field
 };
 
 const calculateTotalAmount = (cartItems) => {
@@ -74,6 +75,26 @@ const cartSlice = createSlice({
       state.userCarts = {};
       state.totalQuantity = 0;
       state.totalAmount = 0;
+    },
+    updateQuantity: (state, action) => {
+      const { userId, itemId, quantity } = action.payload;
+      const cartItem = state.userCarts[userId].find(
+        (item) => item.id === itemId
+      );
+
+      if (cartItem) {
+        cartItem.quantity = quantity;
+        cartItem.totalPrice = Number(cartItem.price) * Number(quantity);
+
+        // Update totalQuantity
+        state.totalQuantity = state.userCarts[userId].reduce(
+          (total, item) => total + item.quantity,
+          0
+        );
+
+        // Update totalAmount for the specific user
+        state.totalAmount = calculateTotalAmount(state.userCarts[userId]);
+      }
     },
   },
 });
